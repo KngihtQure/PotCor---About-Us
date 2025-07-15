@@ -1,1 +1,1 @@
-# PotCor---About-Us
+# PotCor
