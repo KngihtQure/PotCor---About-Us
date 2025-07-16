@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Potato Corner - Menu</title>
+
+  <!-- Fonts & Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" />
+  <link href="https://www.1001fonts.com/chunkfive-font.html" rel="stylesheet">
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'AvenirLTStd-Black', sans-serif;
+      text-decoration: none;
+    }
+
+    body {
+      background-color: #fffef4;
+      color: #333;
+      padding-top: 80px;
+      background: url(Pictures/Website-Background-Faded.png) center/cover repeat;
+    }
+
+    /* === HEADER === */
+    .navbar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 1000;
+      background: #03ac4b;
+      font-family: 'AvenirLTStd-Black', sans-serif;
+    }
+
+    .header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 20px;
+    }
+
+    .logo img {
+      width: 200px;
+      height: auto;
+      padding: 10px;
+    }
+
+    .header ul {
+      display: flex;
+      margin-right: 30px;
+    }
+
+    .header li {
+      list-style: none;
+    }
+
+    .header li a {
+      color: white;
+      font-size: 18px;
+      font-weight: bold;
+      margin-right: 50px;
+      text-decoration: none;
+    }
+
+    .menu-toggle {
+      display: none;
+      background: none;
+      border: none;
+      font-size: 30px;
+      color: white;
+      padding-right: 20px;
+      cursor: pointer;
+    }
+
+    .header ul li a:hover {
+      color: #f7ea0a;
+    }
+
+    .yellowbar {
+      background-color: #f7ea0a;
+      padding: 5px;
+      filter: drop-shadow(0px 2px 4px rgb(102, 102, 102));
+    }
+
+    /* === MENU SECTION === */
+    .menu-title {
+      font-family: 'ChunkFive-regular', serif;
+      letter-spacing: 10px;
+      text-align: center;
+      font-size: 50px;
+      font-weight: bold;
+      color: #03ac4b;
+      padding-top: 30px;
+      margin: 40px 0 10px;
+      animation: fade-up 1s;
+    }
+
+    .section-title {
+      font-family: 'ChunkFive-regular', serif;
+      text-align: center;
+      letter-spacing: 2px;
+      font-size: 30px;
+      font-weight: bold;
+      margin: 30px 40px 10px;
+      color: #03ac4b;
+      padding: 20px;
+      animation: fade-up 3s;
+    }
+
+    .product-grid {
+      align-items: center;
+      justify-content: center;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 25px;
+      padding: 0 40px 40px;
+      width: 70%;
+      margin: 0 auto;
+      animation: appear linear;
+      animation-timeline: view();
+      animation-range: entry 0% cover 40%;
+    }
+
+    .product-card {
+      font-family: 'AvenirLTStd-Black', sans-serif;
+      background-color: #fff;
+      border: 3px solid #00994d;
+      padding: 15px;
+      border-radius: 10px;
+      text-align: center;
+      box-shadow: 2px 2px 10px rgba(0,0,0,0.1);
+      animation: appear linear;
+      animation-timeline: view();
+      animation-range: entry 0% cover 40%;
+    }
+
+    .product-card img {
+      width: 100%;
+      height: auto;
+      object-fit: cover;
+      border-radius: 10px;
+      margin-bottom: 15px;
+      filter: drop-shadow(0px 2px 4px black);
+    }
+
+    .flavor {
+      font-weight: bold;
+      margin-bottom: 10px;
+      font-size: 18px;
+      
+    }
+
+    .options {
+      text-align: left;
+      margin: 10px 0;
+    }
+
+    .options strong {
+      display: block;
+      margin-bottom: 5px;
+      color: #00994d;
+    }
+
+    .options label {
+      display: block;
+      margin: 3px 0;
+    }
+
+    button {
+      padding: 8px 15px;
+      background-color: #ffa500;
+      border: none;
+      border-radius: 5px;
+      font-weight: bold;
+      cursor: pointer;
+      color: white;
+      text-shadow: rgba(0,0,0,0.1);
+    }
+    button:hover {
+      background-color: #f7ea0a;
+      color: white;
+    }
+    .place-order {
+      display: flex;
+      justify-content: center;
+      margin: 40px 0;
+    }
+    .place-order button{
+      font-size: 20px;
+    }
+
+    .feedback {
+      padding: 0 40px 60px;
+    }
+
+    .feedback form {
+      max-width: 600px;
+      margin: auto;
+    }
+
+    #starRating span {
+      font-size: 24px;
+      cursor: pointer;
+      color: #ccc;
+    }
+
+    #starRating span.selected {
+      color: gold;
+    }
+
+    .profile img{
+      border-radius: 50%;
+      width: 100px;
+      height: auto;
+    }
+
+    /* === FOOTER === */
+    footer {
+      background-color: #03ac4b;
+    }
+
+    .footernav, .footernavbot {
+      font-family: 'AvenirLTStd-Roman', sans-serif;
+      color: white;
+      text-align: center;
+      padding: 10px;
+    }
+
+    .socials {
+      display: flex;
+      justify-content: center;
+    }
+
+    .socials a {
+      text-decoration: none;
+      padding: 10px;
+      background-color: white;
+      margin: 10px;
+      border-radius: 50%;
+    }
+
+    .socials a i {
+      font-size: 2em;
+      color: #03ac4b;
+      opacity: 0.9;
+    }
+
+    .socials a:hover {
+      background-color: #03ac4b;
+      transition: 0.5s;
+    }
+
+    .socials a:hover i {
+      color: white;
+      transition: 0.5s;
+    }
+
+    /* === MOBILE MENU === */
+    @media (orientation: portrait), (max-width: 414px) {
+      .header{
+        position: relative;
+        color: #03ac4b;
+      }
+      .header ul {
+        color: #03ac4b;
+        position: fixed;
+        top: 0;
+        right: -5vh;
+        height: 1200px;
+        width: 40%; 
+        background: whitesmoke;
+        flex-direction: column;
+        align-items: flex-start;
+        padding-top: 80px;
+        padding-left: 30px;
+        filter: drop-shadow(0px 2px 4px black);
+        transform: translateX(115%);
+        transition: transform 0.3s ease;
+        z-index: 200;
+        display: flex;
+      }
+      .header ul.active {
+        transform: translateX(0);
+      }
+      .menu-toggle {
+        display: block;
+        position: absolute;
+        top: 25px;
+        right: 20px;
+        z-index: 300;
+        padding: 8px 10px;
+        margin-bottom: 20px;
+      }
+      .menu-toggle.inverted{
+        color: #03ac4b;
+      }
+      menu{
+          display: none;
+      }
+      .header ul li a {
+        font-size: 20px;
+        color: #03ac4b;
+        display: block;
+        margin: 20px 0;
+      } 
+      .product-grid{
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      }
+      .product-grid{
+        width: 100%;
+      }
+    }
+    /*Fonts*/
+    @font-face{
+        font-family: 'AvenirLTStd-Black';
+        src: url('Fonts/avenir-lt-std_Luyvi/Avenir LT Std 95 Black.otf') format('opentype');
+        font-weight: normal;
+        font-style: normal;
+    }
+    @font-face{
+        font-family: 'AvenirLTStd-Roman';
+        src: url('Fonts/avenir-lt-std_Luyvi/Avenir LT Std 55 Roman.otf') format('opentype');
+        font-weight: normal;
+        font-style: normal;
+    }
+    @font-face{
+        font-family: 'ChunkFive-print';
+        src: url('Fonts/chunkfive.print.ttf') format('truetype');
+        font-weight: normal;
+        font-style: normal;
+    }
+    @font-face{
+        font-family: 'ChunkFive-regular';
+        src: url('Fonts/chunkfive.regular.ttf') format('truetype');
+        font-weight: normal;
+        font-style: normal;
+    }
+    /*Animations*/
+    @keyframes appear {
+    from{
+        opacity: 0;
+        transform: translateX(-100px);
+    }
+    to{
+        opacity: 1;
+        transform: translateX(0px);
+    }
+  }
+  @keyframes fade-up{
+    0%{
+        opacity: 0;
+        transform: translateY(30px) scale(0.9);
+    }100%{
+        opacity: 1;
+        transform: translateY(0px) scale(1);
+    }
+  }
+  </style>
+</head>
+
+<body>
+  <!-- Header -->
+  <nav class="navbar">
+    <div class="header">
+      <div class="logo"><img src="https://i.ibb.co/bMsnXhPH/Potato-Corner-Logo-2023.png" alt="Potato Corner Logo"></div>
+      <ul id="navList">
+	      <li><a href="#">Home</a></li>
+        <li><a href="AboutUs.html">About Us</a></li>
+	      <li><a href="#menu">Menu</a></li>
+      </ul>
+      <button class="menu-toggle"><i class="fa-solid fa-bars"></i></button>
+    </div>
+    <div class="yellowbar"></div>
+  </nav>
+
+  <!-- Menu Section -->
+  <div id="menu">
+    <div class="menu-title">MENU</div>
+    <div class="section-title">Best Sellers</div>
+    <div class="product-grid" id="best-sellers"></div>
+    <div class="section-title">New Products!</div>
+    <div class="product-grid" id="new-products"></div>
+    <div class="place-order"><button onclick="placeOrder()">Place Order</button></div>
+  </div>
+<div class="section-title">Recent Reviews</div>
+  <div class="product-grid" style="display: flex; overflow-x: auto; gap: 20px; padding: 0 40px;">
+    <div class="product-card" style="min-width: 250px;">
+      <div class ="profile">
+        <img src="https://i.ibb.co/cK5VtT9v/Pinoy1.jpg" alt="Pinoy1" border="0">
+      </div>
+      <p><strong>Kenny Gonzales</strong></p><br>
+      <p>They fries and texture is very good and very slavory but gets soggy fast.</p>
+      <div>⭐⭐⭐⭐☆</div>
+    </div>
+    <div class="product-card" style="min-width: 250px;">
+      <div class ="profile">
+        <img src="https://i.ibb.co/wF98Lw9Z/Pinoy2.jpg" alt="Pinoy2" border="0">
+      </div>
+      <p><strong>Mike Dizon</strong></p><br>
+      <p>Fries is great, pero unti lang dinagdag na powder saakin at hindi ko medyo natitikman yung flavor.</p>
+      <div>⭐⭐⭐☆☆</div>
+    </div>
+    <div class="product-card" style="min-width: 250px;">
+      <div class ="profile">
+        <img src="https://i.ibb.co/zVDstyBK/Pinoy3.jpg" alt="Pinoy3" border="0">
+      </div>
+      <p><strong>Jennifer Sanchez</strong></p><br>
+      <p>Perfect texture and have wonderful unique FLAVORS! 5/5</p>
+      <div>⭐⭐⭐⭐⭐</div>
+    </div>
+  </div>
+  <!-- Feedback Section -->
+  <br>
+  <div class="section-title" id="feedback">Send us Feedback!</div>
+  <div class="feedback">
+    <form onsubmit="submitFeedback(event)">
+      <div style="margin-bottom: 10px;">
+        <label>Add Your Rating:</label>
+        <div id="starRating">
+          <span onclick="setRating(1)">☆</span>
+          <span onclick="setRating(2)">☆</span>
+          <span onclick="setRating(3)">☆</span>
+          <span onclick="setRating(4)">☆</span>
+          <span onclick="setRating(5)">☆</span>
+        </div>
+      </div>
+      <input type="text" placeholder="Enter your name" style="width: 100%; padding: 10px; border-radius: 10px; margin-bottom: 10px;" />
+      <input type="email" placeholder="Enter your email" style="width: 100%; padding: 10px; border-radius: 10px; margin-bottom: 10px;" />
+      <textarea placeholder="Type here..." rows="4" style="width: 100%; padding: 10px; border-radius: 10px; margin-bottom: 10px;"></textarea>
+      <button type="submit" style="background-color: #ffa500; color: white; padding: 10px; justify-content: center; width: 50%; font-size: 20px;">Submit</button>
+    </form>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <div class="yellowbar"></div>
+    <div class="footernav"><p>Terms & Conditions | Privacy Policy | Contact Us</p></div>
+    <div class="socials">
+      <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
+      <a href="#"><i class="fa-brands fa-facebook"></i></a>
+      <a href="#"><i class="fa-brands fa-instagram"></i></a>
+      <a href="#"><i class="fa-brands fa-youtube"></i></a>
+    </div>
+    <div class="footernavbot"><p>© 2025 Potato Corner. All rights reserved.</p></div>
+  </footer>
+
+  <!-- JavaScript -->
+  <script>
+    const flavors = [
+      { id: 0, flavor: "Barbeque", image: "Pictures/barbeque.png" },
+      { id: 1, flavor: "Cheese", image: "Pictures/cheese.png" },
+      { id: 2, flavor: "Sour Cream", image: "Pictures/sourcream.png" },
+      { id: 3, flavor: "Golden Sweet Corn", image: "Pictures/goldensweetcorn.png" },
+      { id: 4, flavor: "Chili Barbeque", image: "Pictures/chilibarbeque.png" },
+      { id: 5, flavor: "Chili Cheese", image: "Pictures/chilicheese.png" },
+      { id: 6, flavor: "White Cheddar", image: "Pictures/whitecheddar.png" },
+      { id: 7, flavor: "Wasabi", image: "Pictures/wasabi.webp" },
+      { id: 8, flavor: "Truffle", image: "Pictures/truffle.png" }
+    ];
+
+    const productHTML = (id, imageUrl, flavorName) => `
+      <div class="product-card">
+        <img src="${imageUrl}" alt="${flavorName}" />
+        <div class="flavor">${flavorName}</div>
+        <div class="options">
+          <strong>Sizes:</strong>
+          <label><input type="radio" name="size-${id}" /> Regular</label>
+          <label><input type="radio" name="size-${id}" /> Jumbo</label>
+          <label><input type="radio" name="size-${id}" /> Mega</label>
+        </div>
+        <div class="options">
+          <strong>Type:</strong>
+          <label><input type="radio" name="type-${id}" /> Premium</label>
+          <label><input type="radio" name="type-${id}" /> Giga</label>
+          <label><input type="radio" name="type-${id}" /> Tera</label>
+        </div>
+        <button>Add to Cart</button>
+      </div>
+    `;
+
+    const renderProducts = (containerId, items) => {
+      const container = document.getElementById(containerId);
+      items.forEach(item => {
+        container.innerHTML += productHTML(item.id, item.image, item.flavor);
+      });
+    };
+
+    renderProducts('best-sellers', flavors.slice(0, 6));
+    renderProducts('new-products', flavors.slice(6));
+
+    function placeOrder() {
+      alert('Order placed!');
+    }
+
+    let currentRating = 0;
+    function setRating(rating) {
+      currentRating = rating;
+      const stars = document.querySelectorAll('#starRating span');
+      stars.forEach((star, index) => {
+        star.classList.toggle('selected', index < rating);
+      });
+    }
+
+    function submitFeedback(event) {
+      event.preventDefault();
+      alert(`Thank you for your feedback! Rating: ${currentRating} star(s)`);
+    }
+
+    document.querySelector('.menu-toggle').addEventListener('click', () => {
+      const nav = document.getElementById('navList');
+      const menuToggle = document.querySelector('.menu-toggle');
+      nav.classList.toggle('active');
+      if(nav.classList.contains('active')){
+        menuToggle.classList.add("inverted");
+      }else{
+        menuToggle.classList.remove("inverted");
+      }
+    });
+  </script>
+</body>
+</html>
