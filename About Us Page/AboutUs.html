@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset='UTF-8'>
+        <meta name = "About Us" content = "History and description">
+        <link rel = "stylesheet" type = "text/css" href = "AboutUs_style.css">
+        
+        <!--Icon link-->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" 
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" 
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+        
+        <!-- Chunckfive-font link -->
+        <link href="https://www.1001fonts.com/chunkfive-font.html" rel="stylesheet">
+
+        <title>PtCor - About Us</title>
+    </head>
+    <body>
+        <!--Header-->
+        <nav class = "navbar">
+            <div class = "header">
+                <div class = "logo">
+                    <a href="https://imgbb.com/"><img src="https://i.ibb.co/bMsnXhPH/Potato-Corner-Logo-2023.png" alt="Potato-Corner-Logo-2023" border="0"></a>
+                </div>
+                <ul>
+                    <li><a href = "#">Home</a></li>
+                    <li><a href = "#">About Us</a></li>
+                    <li><a href = "#">Menu</a></li>
+                </ul>
+                <button class = "menu-toggle" aria-label="Open menu">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+            </div>
+        <nav class = "yellowbar">
+            <rect width="auto" height="auto">
+        </nav>
+        </nav>
+
+        <!--Content-->
+            <div class = "banner">
+                <h2>ABOUT US</h2>
+            </div>
+            <div class = "Description">
+                <h2>FRANCHISE</h2>
+                <div class = "Franchise">
+                    <p>Having been in the business for 32 years, Potato Corner is a trailblazer in the 
+                    franchise industry, consistently winning awards to recognize its simple yet effective business 
+                    model. Potato Corner has won the Franchise Hall of Fame Award and Global Franchise Award – both 
+                    awarded by the Philippine Franchise Association and Department of Trade and Industry. With branches 
+                    in 15 countries, Potato Corner is an ideal partner in making a secure investment for your future.</p>
+                    <img src="https://i.ibb.co/yFpwtSSq/Store.png" alt="Store" border="0">
+                </div>
+                <hr>
+                <h2>HISTORY</h2>
+                <div class = "History">
+                    <img src="https://i.ibb.co/v6Bg5mQ9/History.jpg" alt="History" border="0"><br>
+                    <p>Anywhere you go in the Philippines, you’re bound to find a bright-green kiosk, with a smiling spud next 
+                        to the now-familiar name: Potato Corner. Today, this food cart has become the top-of- mind entry point 
+                        for budding entrepreneurs and has seen its business expand in the Philippines and overseas. Dubbed as the 
+                        World’s Best Flavored Fries, Potato Corner has been a leading brand in the food industry for OVER 25 years.
+                        <br><br>
+                        Potato Corner opened its first outlet in the Philippines in October 1992 and began franchising the year after.
+                        Today, it has grown from small carts into in-line stores found in almost every corner of the world – in malls, 
+                        schools, hospitals, bus stations, amusement parks, and even tourist destinations in multiple countries. In every
+                        corner of the world, someone wants Potato Corner.</p>
+                </div>
+                <hr>
+                <div class = "Branches">
+                    <h2>BRANCHES</h2>
+                    <p>Potato Corner has over 1,000 branches worldwide, with more than 500 in the Philippines alone. 
+                    It has also expanded to 15 countries including the United States, Canada, Australia, Singapore, 
+                    Indonesia, Malaysia, Thailand, Vietnam, and the Middle East. <b>You can search and see the branches near you below:</b></p>
+                    <br>
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d61796.55777238212!2d121.00896777107934!3d14.525691703453912!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1sPotato%20Corner!5e0!3m2!1sen!2sph!4v1750850077517!5m2!1sen!2sph" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    <br><br>
+                </div>
+                <hr>
+                <div class = "Mission">
+                    <h2>MISSION</h2>
+                    <p class = "Mission">"To be the world’s best flavored fries brand, serving the best tasting fries with a smile."</p>
+                </div>
+            </div>
+        <!--Branches-->
+
+        <!--Footer-->
+        <footer>
+            <nav class = "yellowbar">
+                <rect width="auto" height="auto"></rect>
+            </nav>
+            <div class = "footer">
+                <div class = "footernav">
+                    <p>Terms & Conditions | Privacy Policy | Contact Us</p>
+                </div>
+                <div class = "socials">
+                    <a href="https://x.com/potatocornerph?lang=en"><i class="fa-brands fa-x-twitter"></i></a>
+                    <a href="https://www.facebook.com/PotatoCorner/"><i class="fa-brands fa-facebook"></i></a>
+                    <a href="https://www.instagram.com/potatocornerph/?hl=en"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="https://www.youtube.com/@PotatoCornerPhilippines"><i class="fa-brands fa-youtube"></i></a>
+                </div>
+                <div class = "footernavbot">
+                    <p>© 2025 Potato Corner, All rights reserved.</p>
+                </div>
+            </div>
+        </footer>
+    </body>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+        const menuToggle = document.querySelector('.menu-toggle');
+        const menu = document.querySelector('.header ul');
+        menuToggle.classList.toggle('active');
+        menuToggle.addEventListener('click', function() {
+            menu.classList.toggle('active');
+            menuToggle.classList.toggle('active');
+
+            if (menu.classList.contains('active')) {
+                menuToggle.classList.add("inverted");
+            } else {
+                menuToggle.classList.remove("inverted");
+            }
+            });
+        });
+</script>
+</html>
